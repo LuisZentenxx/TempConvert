@@ -58,16 +58,16 @@ class MainActivity : AppCompatActivity() {
         val rnkToReaumur: (Float) -> Float = { (it - 491.67f) * 4/9 }
 
         // Kelvin to
-        val klvToFahrenheit: (Float) -> Float = { it }
-        val klvToCelsius: (Float) -> Float = { it }
-        val klvToRankine: (Float) -> Float = { it }
-        val klvToReaumur: (Float) -> Float = { it }
+        val klvToFahrenheit: (Float) -> Float = { (it - 273.15f) * 9/5 + 32 }
+        val klvToCelsius: (Float) -> Float = { it - 273.15f }
+        val klvToRankine: (Float) -> Float = { it * 9/5 }
+        val klvToReaumur: (Float) -> Float = { (it - 273.15f) * 4/5 }
 
         // Reaumur to
-        val reToFahrenheit: (Float) -> Float = { it }
-        val reToCelsius: (Float) -> Float = { it }
-        val reToRankine: (Float) -> Float = { it }
-        val reToKelvin: (Float) -> Float = { it }
+        val reToFahrenheit: (Float) -> Float = { it * 5/4 }
+        val reToCelsius: (Float) -> Float = { it * 9/4 + 32 }
+        val reToRankine: (Float) -> Float = { it * 9/4 + 491.67f }
+        val reToKelvin: (Float) -> Float = { it * 5/4 + 273.15f }
 
         // Fahrenheit Conversor
         btnFahrenheit.setOnClickListener {
@@ -136,7 +136,7 @@ class MainActivity : AppCompatActivity() {
                 etKelvin.setText(String.format("%.2f", kelvin))
                 etReaumur.setText(String.format("%.2f", reaumur))
 
-            }else{
+            } else{
                 etFahrenheit.setText("")
                 etCelsius.setText("")
                 etRankine.setText("")
@@ -162,6 +162,12 @@ class MainActivity : AppCompatActivity() {
                 etCelsius.setText(String.format("%.2f", celsius))
                 etRankine.setText(String.format("%.2f", rankine))
                 etReaumur.setText(String.format("%.2f", reaumur))
+
+            } else {
+                etFahrenheit.setText("")
+                etCelsius.setText("")
+                etRankine.setText("")
+                etKelvin.setText("")
             }
         }
 
