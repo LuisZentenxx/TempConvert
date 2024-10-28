@@ -1,6 +1,6 @@
 # TempConverter - App Básica para Principiantes 🌡️
 
-¡Bienvenido/a a la app **TempConverter** ! Esta es una aplicación sencilla para aprender a convertir entre diferentes unidades de temperatura (Celsius, Fahrenheit, Kelvin) mientras practicas conceptos básicos de desarrollo en Kotlin y Android.
+¡Bienvenido/a a la app **TempConverter** ! Esta es una aplicación sencilla para aprender a convertir entre diferentes unidades de temperatura `Celsius`, `Fahrenheit`, `Kelvin`, `Rankine` y `Réaumur` mientras practicas conceptos básicos de desarrollo en Kotlin y Android.
 
 ## Descripción General 💡
 Esta app permite a los usuarios ingresar una temperatura en una unidad y convertirla a otra unidad con solo un toque. Es perfecta para principiantes que buscan mejorar sus habilidades en Android al aprender sobre layouts, eventos, y manejo de cadenas de texto.
