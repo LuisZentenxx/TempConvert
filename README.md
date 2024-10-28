@@ -21,6 +21,97 @@ Esta aplicación cubre conceptos fundamentales en el desarrollo de aplicaciones 
 - **Funciones Lambda y Funciones de Orden Superior**: Una función lambda es una expresión que define una función sin necesidad de darle un nombre.
 - Se utiliza principalmente para crear funciones de manera concisa y para pasar funciones como argumentos a otras funciones.
 
+## Fórmulas
+### De Fahrenheit (F) a otras escalas:
+- **Fahrenheit a Celsius (°C):**
+  ```plaintext
+  °C = (°F - 32) * 5/9
+  ```
+- **Fahrenheit a Rankine (°R):**
+  ```plaintext
+  °R = °F + 459.67
+  ```
+- **Fahrenheit a Kelvin (K):**
+  ```plaintext
+  K = (°F - 32) * 5/9 + 273.15
+  ```
+- **Fahrenheit a Réaumur (°RE):**
+  ```plaintext
+  °RE = (°F - 32) * 4/9
+
+### De Celsius (C) a otras escalas:
+- **Celsius a Fahrenheit (°F):**
+  ```plaintext
+  °F = °C * 9/5 + 32
+  ```
+- **Celsius a Rankine (°R):**
+  ```plaintext
+  °R = (°C + 273.15) * 9/5
+  ```
+- **Celsius a Kelvin (K):**
+  ```plaintext
+  K = °C + 273.15
+  ```
+- **Celsius a Réaumur (°RE):**
+  ```plaintext
+  °RE = °C * 4/5
+
+### De Rankine (°R) a otras escalas:
+
+- **Rankine a Fahrenheit (°F):**
+  ```plaintext
+  °F = °R - 459.67
+  ```
+- **Rankine a Celsius (°C):**
+  ```plaintext
+  °C = (°R - 491.67) * 5/9
+  ```
+- **Rankine a Kelvin (K):**
+  ```plaintext
+  K = °R * 5/9
+  ```
+- **Rankine a Réaumur (°RE):**
+  ```plaintext
+  °RE = (°R - 491.67) * 4/9
+  ```
+
+### De Kelvib (K) a otras escalas:
+
+- **Kelvin a Fahrenheit (°F):**
+  ```plaintext
+  °F = (K - 273.15) * 9/5 + 32
+  ```
+- **Kelvin a Celsius (°C):**
+  ```plaintext
+  °C = K - 273.15
+  ```
+- **Kelvin a Rankine (°R):**
+  ```plaintext
+  °R = K * 9/5
+  ```
+- **Kelvin a Réaumur (°RE):**
+  ```plaintext
+  °RE = (K - 273.15) * 4/5
+  ```
+
+### De Réaumur (°RE) a otras escalas:
+
+- **Réaumur a Fahrenheit (°F):**
+  ```plaintext
+  °F = °RE * 9/4 + 32
+  ```
+- **Réaumur a Celsius (°C):**
+  ```plaintext
+  °C = °RE * 5/4
+  ```
+- **Réaumur a Rankine (°R):**
+  ```plaintext
+  °R = (°RE * 9/4) + 491.67
+  ```
+- **Réaumur a Kelvin (K):**
+  ```plaintext
+  K = °RE * 5/4 + 273.15
+  ```
 ## Instalación y Ejecución 💻
 
 1. **Clonar el repositorio**:
