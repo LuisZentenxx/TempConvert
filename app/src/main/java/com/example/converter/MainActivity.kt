@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -13,12 +12,14 @@ class MainActivity : AppCompatActivity() {
     private lateinit var btnFahrenheit : Button
     private lateinit var btnCelsius : Button
     private lateinit var btnRankine : Button
+    private lateinit var btnKelvin : Button
     private lateinit var btnReaumur : Button
     private lateinit var etFahrenheit : EditText
     private lateinit var etCelsius : EditText
     private lateinit var etRankine : EditText
     private lateinit var etKelvin : EditText
     private lateinit var etReaumur : EditText
+    private lateinit var btnLearn : Button
 
     @SuppressLint("DefaultLocale")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,12 +30,14 @@ class MainActivity : AppCompatActivity() {
         btnFahrenheit = findViewById(R.id.btnFahrenheit)
         btnCelsius = findViewById(R.id.btnCelsius)
         btnRankine = findViewById(R.id.btnRankine)
+        btnKelvin = findViewById(R.id.btnKelvin)
         btnReaumur = findViewById(R.id.btnReaumur)
         etFahrenheit = findViewById(R.id.etFahrenheit)
         etCelsius = findViewById(R.id.etCelsius)
         etRankine = findViewById(R.id.etRankine)
         etKelvin = findViewById(R.id.etKelvin)
         etReaumur = findViewById(R.id.etReaumur)
+        btnLearn = findViewById(R.id.btnLearn)
 
         // Fahrenheit to
         val fhrToCelsius: (Float) -> Float = { (it - 32) * 5/9 }
@@ -55,9 +58,18 @@ class MainActivity : AppCompatActivity() {
         val rnkToReaumur: (Float) -> Float = { (it - 491.67f) * 4/9 }
 
         // Kelvin to
+        val klvToFahrenheit: (Float) -> Float = { it }
+        val klvToCelsius: (Float) -> Float = { it }
+        val klvToRankine: (Float) -> Float = { it }
+        val klvToReaumur: (Float) -> Float = { it }
 
         // Reaumur to
+        val reToFahrenheit: (Float) -> Float = { it }
+        val reToCelsius: (Float) -> Float = { it }
+        val reToRankine: (Float) -> Float = { it }
+        val reToKelvin: (Float) -> Float = { it }
 
+        // Fahrenheit Conversor
         btnFahrenheit.setOnClickListener {
             var textInput = etFahrenheit.text.toString()
 
@@ -83,6 +95,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Celsius Conversor
         btnCelsius.setOnClickListener {
             var textInput = etCelsius.text.toString()
 
@@ -105,6 +118,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        // Rankine Conversor
         btnRankine.setOnClickListener {
             var textInput = etRankine.text.toString()
 
@@ -130,6 +144,54 @@ class MainActivity : AppCompatActivity() {
                 etReaumur.setText("")
             }
         }
+
+        // Kelvin Conversor
+        btnKelvin.setOnClickListener {
+            var textInput = etKelvin.text.toString()
+
+            if (textInput.isNotEmpty()) {
+
+                val kelvin = textInput.toFloat()
+
+                val fahrenheit = converter(kelvin, klvToFahrenheit)
+                val celsius = converter(kelvin, klvToCelsius)
+                val rankine = converter(kelvin, klvToRankine)
+                val reaumur = converter(kelvin, klvToReaumur)
+
+                etFahrenheit.setText(String.format("%.2f", fahrenheit))
+                etCelsius.setText(String.format("%.2f", celsius))
+                etRankine.setText(String.format("%.2f", rankine))
+                etReaumur.setText(String.format("%.2f", reaumur))
+            }
+        }
+
+        // Réaumur Conversor
+        btnReaumur.setOnClickListener {
+            var textInput = etReaumur.text.toString()
+
+            if (textInput.isNotEmpty()) {
+
+                val reaumur = textInput.toFloat()
+
+                val fahrenheit = converter(reaumur, reToFahrenheit)
+                val celsius = converter(reaumur, reToCelsius)
+                val rankine = converter(reaumur, reToRankine)
+                val kelvin = converter(reaumur, reToKelvin)
+
+                etFahrenheit.setText(String.format("%.2f", fahrenheit))
+                etCelsius.setText(String.format("%.2f", celsius))
+                etRankine.setText(String.format("%.2f", rankine))
+                etKelvin.setText(String.format("%.2f", kelvin))
+
+            } else {
+                etFahrenheit.setText("")
+                etCelsius.setText("")
+                etRankine.setText("")
+                etKelvin.setText("")
+            }
+        }
+
+        // Botón Limpiar
         btnClear.setOnClickListener {
             etFahrenheit.setText("")
             etCelsius.setText("")
@@ -138,9 +200,14 @@ class MainActivity : AppCompatActivity() {
             etReaumur.setText("")
         }
 
+        // Botón Intent
+        btnLearn.setOnClickListener {
+
+        }
 
         }
     }
 
+// Función Lambda
 private fun converter(t: Float, convertion:(Float) -> Float) = convertion(t)
 

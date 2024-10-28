@@ -6,6 +6,24 @@
     android:orientation="vertical"
     android:padding="30dp">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="335dp"
+            android:layout_height="wrap_content"
+            android:text="Temp Converter️"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            />
+    </LinearLayout>
+
     <!-- Campo 1: Fahrenheit -->
     <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
@@ -17,14 +35,16 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        >
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etFahrenheit"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
             android:hint="0 °F"
+            android:layout_marginEnd="40dp"
             android:inputType="numberDecimal" />
 
         <Button
@@ -51,10 +71,11 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etCelsius"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
             android:hint="0 °C"
+            android:layout_marginEnd="40dp"
             android:inputType="numberDecimal" />
 
         <Button
@@ -66,7 +87,7 @@
 
 
     <!-- Campo 3: Rankine -->
-    <androidx.appcompat.widget.AppCompatEditText
+    <androidx.appcompat.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Rankine"
@@ -81,10 +102,11 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etRankine"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
             android:hint="0 °R"
+            android:layout_marginEnd="40dp"
             android:inputType="numberDecimal" />
 
         <Button
@@ -111,10 +133,11 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etKelvin"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
             android:hint="0 K"
+            android:layout_marginEnd="40dp"
             android:inputType="numberDecimal" />
 
         <Button
@@ -141,10 +164,11 @@
 
         <androidx.appcompat.widget.AppCompatEditText
             android:id="@+id/etReaumur"
-            android:layout_width="200dp"
+            android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
             android:hint="0 °Re"
+            android:layout_marginEnd="40dp"
             android:inputType="numberDecimal" />
 
         <Button
@@ -158,5 +182,15 @@
         android:id="@+id/btnClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
         android:text="Limpiar"/>
+
+    <Button
+        android:id="@+id/btnLearn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¡Aprender más!"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"/>
 </LinearLayout>
