@@ -26,18 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        btnClear = findViewById(R.id.btnClear)
-        btnFahrenheit = findViewById(R.id.btnFahrenheit)
-        btnCelsius = findViewById(R.id.btnCelsius)
-        btnRankine = findViewById(R.id.btnRankine)
-        btnKelvin = findViewById(R.id.btnKelvin)
-        btnReaumur = findViewById(R.id.btnReaumur)
-        etFahrenheit = findViewById(R.id.etFahrenheit)
-        etCelsius = findViewById(R.id.etCelsius)
-        etRankine = findViewById(R.id.etRankine)
-        etKelvin = findViewById(R.id.etKelvin)
-        etReaumur = findViewById(R.id.etReaumur)
-        btnLearn = findViewById(R.id.btnLearn)
+        // Inicializa los componentes UI
+       initializeUI()
 
         // Fahrenheit to
         val fhrToCelsius: (Float) -> Float = { (it - 32) * 5/9 }
@@ -114,7 +104,7 @@ class MainActivity : AppCompatActivity() {
                 etReaumur.setText(String.format("%.2f", reaumur))
 
             } else {
-                etFahrenheit.setText("")
+                clearInputs()
             }
         }
 
@@ -137,11 +127,7 @@ class MainActivity : AppCompatActivity() {
                 etReaumur.setText(String.format("%.2f", reaumur))
 
             } else{
-                etFahrenheit.setText("")
-                etCelsius.setText("")
-                etRankine.setText("")
-                etKelvin.setText("")
-                etReaumur.setText("")
+                clearInputs()
             }
         }
 
@@ -164,10 +150,7 @@ class MainActivity : AppCompatActivity() {
                 etReaumur.setText(String.format("%.2f", reaumur))
 
             } else {
-                etFahrenheit.setText("")
-                etCelsius.setText("")
-                etRankine.setText("")
-                etKelvin.setText("")
+                clearInputs()
             }
         }
 
@@ -190,20 +173,13 @@ class MainActivity : AppCompatActivity() {
                 etKelvin.setText(String.format("%.2f", kelvin))
 
             } else {
-                etFahrenheit.setText("")
-                etCelsius.setText("")
-                etRankine.setText("")
-                etKelvin.setText("")
+                clearInputs()
             }
         }
 
         // Botón Limpiar
         btnClear.setOnClickListener {
-            etFahrenheit.setText("")
-            etCelsius.setText("")
-            etRankine.setText("")
-            etKelvin.setText("")
-            etReaumur.setText("")
+            clearInputs()
         }
 
         // Botón Intent
@@ -212,8 +188,35 @@ class MainActivity : AppCompatActivity() {
         }
 
         }
+
+    private fun converter(t: Float, convertion:(Float) -> Float) = convertion(t)
+
+    // Función que inicializa los componentes UI
+    private fun initializeUI(){
+        btnClear = findViewById(R.id.btnClear)
+        btnFahrenheit = findViewById(R.id.btnFahrenheit)
+        btnCelsius = findViewById(R.id.btnCelsius)
+        btnRankine = findViewById(R.id.btnRankine)
+        btnKelvin = findViewById(R.id.btnKelvin)
+        btnReaumur = findViewById(R.id.btnReaumur)
+        etFahrenheit = findViewById(R.id.etFahrenheit)
+        etCelsius = findViewById(R.id.etCelsius)
+        etRankine = findViewById(R.id.etRankine)
+        etKelvin = findViewById(R.id.etKelvin)
+        etReaumur = findViewById(R.id.etReaumur)
+        btnLearn = findViewById(R.id.btnLearn)
     }
 
-// Función Lambda
-private fun converter(t: Float, convertion:(Float) -> Float) = convertion(t)
+    // Función que limpia todos los campos Edit Text
+    private fun clearInputs() {
+        etFahrenheit.setText("")
+        etCelsius.setText("")
+        etRankine.setText("")
+        etKelvin.setText("")
+        etReaumur.setText("")
+    }
+}
+
+
+
 
