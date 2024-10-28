@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="30dp">
+
+    <!-- Campo 1: Fahrenheit -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fahrenheit"
+        android:textSize="16sp"
+        android:paddingBottom="4dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etFahrenheit"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="0 °F"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnFahrenheit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <!-- Campo 2: Celsius -->
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Celsius"
+        android:textSize="16sp"
+        android:paddingBottom="4dp"
+        android:paddingTop="16dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etCelsius"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="0 °C"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnCelsius"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <!-- Campo 3: Rankine -->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rankine"
+        android:textSize="16sp"
+        android:paddingBottom="4dp"
+        android:paddingTop="16dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etRankine"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="0 °R"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnRankine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <!-- Campo 4: Kelvin -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kelvin"
+        android:textSize="16sp"
+        android:paddingBottom="4dp"
+        android:paddingTop="16dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etKelvin"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="0 K"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnKelvin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+    <!-- Campo 5: Réaumur -->
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Réaumur"
+        android:textSize="16sp"
+        android:paddingBottom="4dp"
+        android:paddingTop="16dp" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/etReaumur"
+            android:layout_width="200dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:hint="0 °Re"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/btnReaumur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Convertir" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Limpiar"/>
+</LinearLayout>
